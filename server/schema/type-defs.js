@@ -1,15 +1,24 @@
 const { gql } = require("apollo-server");
 
 const typeDefs = gql`
-  scalar Date
   type Todo {
     id: ID!
     title: String!
     description: String!
-    date: Date
+    email: String!
   }
   type Query {
     getTodos: [Todo!]!
+  }
+
+  input TodoInput {
+    title: String!
+    description: String!
+    email: String!
+  }
+
+  type Mutation {
+    addTodo(input: TodoInput!): Todo
   }
 `;
 
