@@ -17,8 +17,17 @@ const typeDefs = gql`
     email: String!
   }
 
+  input TodoUpdateInput {
+    id: ID!
+    title: String!
+    description: String!
+    email: String!
+  }
+
   type Mutation {
     addTodo(input: TodoInput!): Todo
+    updateTodo(input: TodoUpdateInput!): Todo
+    deleteTodo(id: ID!): Todo
   }
 `;
 

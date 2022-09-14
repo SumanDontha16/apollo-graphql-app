@@ -7,16 +7,10 @@
       "email": "john@example.com"
     },
     {
-      "id": 2,
-      "title": "Todo 2",
-      "description": "Todo 2 description",
-      "email": "john@example.com"
-    },
-    {
       "id": 3,
-      "title": "Todo 3",
-      "description": "Todo 3 description",
-      "email": "john@example.com"
+      "title": "Lithik",
+      "description": "Lithik5 description",
+      "email": "lithik@gmail.com"
     },
     {
       "title": "New Todo",
@@ -25,9 +19,9 @@
       "id": 4
     },
     {
-      "title": "Todo 5",
-      "description": "New todo 5 description",
-      "email": "todo5@gmail.com",
+      "title": "Added New Todo",
+      "description": "Added New todo 5 description",
+      "email": "Addedtodo5@gmail.com",
       "id": 5
     }
   ]
