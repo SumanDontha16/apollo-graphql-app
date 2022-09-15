@@ -15,10 +15,10 @@ const resolvers = {
       }).then((res) => res.data);
     },
     updateTodo: (parent, args) => {
-      return Axios.patch(`http://localhost:3000/Todo/${args.id}`, {
-        title: args.title,
-        description: args.description,
-        email: args.email,
+      return Axios.patch(`http://localhost:3000/Todo/${args.input.id}`, {
+        title: args.input.title,
+        description: args.input.description,
+        email: args.input.email,
       }).then((res) => res.data);
     },
     deleteTodo: (parent, args) => {

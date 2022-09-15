@@ -13,10 +13,10 @@ export const ADD_TODO = gql`
 
 export const UPDATE_TODO = gql`
   mutation updateTodo(
-    $id: ID!
-    $title: String!
-    $description: String!
-    $email: String!
+    $id: ID
+    $title: String
+    $description: String
+    $email: String
   ) {
     updateTodo(
       id: $id

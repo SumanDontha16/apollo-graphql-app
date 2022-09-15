@@ -31,7 +31,7 @@ const AddTodos = () => {
     return () => {
       document.removeEventListener("mousedown", checkIfClcikedOutside);
     };
-  }, []);
+  }, [setSelectedId]);
 
   const onSubmit = (e) => {
     e.preventDefault();
