@@ -1,6 +1,20 @@
 import React from "react";
+import { useMutation } from "@apollo/client";
+import { DELETE_TODO } from "../graphql/Mutation";
+import { GET_TODOS } from "../graphql/Query";
 
-const TodoList = ({ title, description, email }) => {
+const TodoList = ({ id, title, description, email }) => {
+  const [deleteTodo] = useMutation(DELETE_TODO);
+
+  const removeTodo = (id) => {
+    deleteTodo({
+      variables: {
+        id,
+      },
+      refetchQueries: [{ query: GET_TODOS }],
+    });
+  };
+
   return (
     <>
       <a
@@ -13,6 +27,13 @@ const TodoList = ({ title, description, email }) => {
             <small> {description}</small>
           </div>
           <small className="opacity-50 text-nowrap">{email}</small>
+          <button
+            type="button"
+            className="btn btn-dark"
+            onClick={() => removeTodo(id)}
+          >
+            Delete
+          </button>
         </div>
       </a>
     </>

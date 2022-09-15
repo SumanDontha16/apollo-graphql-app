@@ -1,12 +1,6 @@
 {
   "Todo": [
     {
-      "id": 1,
-      "title": "Todo 1",
-      "description": "Todo 1 description",
-      "email": "john@example.com"
-    },
-    {
       "id": 3,
       "title": "Lithik",
       "description": "Lithik5 description",

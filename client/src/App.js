@@ -18,6 +18,7 @@ function App() {
         {data &&
           data.getTodos.map((todo) => (
             <TodoList
+              id={todo.id}
               title={todo.title}
               description={todo.description}
               email={todo.email}
