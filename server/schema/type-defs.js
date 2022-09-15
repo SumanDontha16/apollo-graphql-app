@@ -11,23 +11,9 @@ const typeDefs = gql`
     getTodos: [Todo]
   }
 
-  #  input TodoInput {
-  #   id: ID!
-  #  title: String!
-  # description: String!
-  #email: String!
-  #}
-
-  input TodoUpdateInput {
-    id: ID!
-    title: String!
-    description: String!
-    email: String!
-  }
-
   type Mutation {
     addTodo(title: String, description: String, email: String): Todo
-    updateTodo(input: TodoUpdateInput!): Todo
+    updateTodo(id: ID, title: String, description: String, email: String): Todo
     deleteTodo(id: ID!): Todo
   }
 `;

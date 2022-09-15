@@ -1,10 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useContext } from "react";
 import { useMutation } from "@apollo/client";
 import { DELETE_TODO } from "../graphql/Mutation";
 import { GET_TODOS } from "../graphql/Query";
+import { TodoContext } from "../TodoContext";
 
 const TodoList = ({ todo }) => {
+  const { selectedId, setSelectedId } = useContext(TodoContext);
   const { id, title, description, email } = todo;
   const [deleteTodo] = useMutation(DELETE_TODO);
 
@@ -22,6 +24,7 @@ const TodoList = ({ todo }) => {
       <a
         href="#"
         className="list-group-item list-group-item-action d-flex gap-3 py-3"
+        onClick={() => setSelectedId(id)}
       >
         <div className="d-flex gap-2 w-100 justify-content-between">
           <div>
