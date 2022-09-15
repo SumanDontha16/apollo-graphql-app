@@ -12,20 +12,12 @@ function App() {
   return (
     <div className="container py-3">
       <h1 className="display-6 fw-normal p-1 pb-md-4 mx-auto border-bottom">
-        Todo List
+        Todo List 🚀
       </h1>
       <AddTodos />
       <div className="list-group mt-4">
         {data &&
-          data.getTodos.map((todo) => (
-            <TodoList
-              id={todo.id}
-              title={todo.title}
-              description={todo.description}
-              email={todo.email}
-              key={todo.id}
-            />
-          ))}
+          data.getTodos.map((todo) => <TodoList todo={todo} key={todo.id} />)}
       </div>
     </div>
   );

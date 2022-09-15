@@ -1,9 +1,11 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { useMutation } from "@apollo/client";
 import { DELETE_TODO } from "../graphql/Mutation";
 import { GET_TODOS } from "../graphql/Query";
 
-const TodoList = ({ id, title, description, email }) => {
+const TodoList = ({ todo }) => {
+  const { id, title, description, email } = todo;
   const [deleteTodo] = useMutation(DELETE_TODO);
 
   const removeTodo = (id) => {
@@ -24,9 +26,9 @@ const TodoList = ({ id, title, description, email }) => {
         <div className="d-flex gap-2 w-100 justify-content-between">
           <div>
             <h5 className="mb-1">{title}</h5>
-            <small> {description}</small>
+            <small> {description} </small>
+            <small className="opacity-50 text-nowrap">{email}</small>
           </div>
-          <small className="opacity-50 text-nowrap">{email}</small>
           <button
             type="button"
             className="btn btn-dark"
