@@ -13,14 +13,15 @@ const AddTodos = () => {
   const { title, description, email } = todo;
   const [addTodo] = useMutation(ADD_TODO);
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     addTodo({
       variables: {
         title,
         description,
         email,
       },
-      refetchQueries: [{ query: GET_TODOS }],
+      refetchQueries: [GET_TODOS, "getTodos"],
     });
     setTodo({
       title: "",
@@ -31,7 +32,7 @@ const AddTodos = () => {
 
   return (
     <>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={onSubmit} className="mt-4">
         <div className="mb-3">
           <label className="form-label">Title</label>
           <input

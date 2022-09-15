@@ -11,7 +11,7 @@ const TodoList = ({ id, title, description, email }) => {
       variables: {
         id,
       },
-      refetchQueries: [{ query: GET_TODOS }],
+      refetchQueries: [GET_TODOS, "getTodos"],
     });
   };
 

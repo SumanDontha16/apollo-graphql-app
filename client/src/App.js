@@ -10,9 +10,10 @@ function App() {
   if (error) return <p>Error :(</p>;
   console.log(data);
   return (
-    <div className="container">
-      <h1>Todo List</h1>
-      <hr />
+    <div className="container py-3">
+      <h1 className="display-6 fw-normal p-1 pb-md-4 mx-auto border-bottom">
+        Todo List
+      </h1>
       <AddTodos />
       <div className="list-group mt-4">
         {data &&

@@ -9,9 +9,11 @@ const resolvers = {
   },
   Mutation: {
     addTodo(parent, args) {
-      return Axios.post("http://localhost:3000/Todo", args.input).then(
-        (res) => res.data
-      );
+      return Axios.post("http://localhost:3000/Todo", {
+        title: args.title,
+        description: args.description,
+        email: args.email,
+      }).then((res) => res.data);
     },
     updateTodo: (parent, args) => {
       return Axios.patch(
